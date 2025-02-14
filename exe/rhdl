@@ -1,0 +1,20 @@
+#!/usr/bin/env ruby
+
+require 'rhdl'
+
+filename = ARGV[0]
+
+contents = File.read(filename)
+
+include Rhdl
+
+dsl = TopDsl.new
+dsl.instance_eval(contents, contents)
+
+config = GenConfig.new
+config.top_module_name = "And"
+
+vg = VerilogGenerator.new(dsl, config)
+puts vg.generate_module("Test1")
+puts vg.generate_module("Test2")
+
