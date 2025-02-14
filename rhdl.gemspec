@@ -8,10 +8,10 @@ Gem::Specification.new do |spec|
   spec.authors       = ['David Siaw']
   spec.email         = ['874280+davidsiaw@users.noreply.github.com']
 
-  spec.summary       = 'Rhdl summary'
-  spec.description   = 'Rhdl description'
+  spec.summary       = 'Ruby Hardware Description Language'
+  spec.description   = 'DSL for FPGA and ASIC development'
   spec.homepage      = 'https://github.com/davidsiaw/rhdl'
-  spec.license       = 'MIT'
+  spec.license       = 'GPLv3'
   spec.required_ruby_version = Gem::Requirement.new('>= 2.3.0')
 
   spec.metadata['allowed_push_host'] = 'https://rubygems.org'

@@ -1,8 +1,53 @@
-# Rhdl
+# rhdl
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/rhdl`. To experiment with that code, run `bin/console` for an interactive prompt.
+Ruby Hardware Description Language
 
-TODO: Delete this and the text above, and describe your gem
+This is a Ruby DSL that allows you to describe digital circuitry for an ASIC or FPGA, and compiles it to verilog.
+
+
+Not finished.
+
+
+Aspirations:
+- fail to compile on undriven wires and registers
+- pedantically fail on possible mistakes by default like unused variables
+- only allow synthesizable
+- simplify 2-block style of verilog
+- allow typing variables strongly
+- simplify generation of repetitive complex circuits
+- be more intuitive
+- less room for error
+- strongly prevent latches (need to be instatiated on purpose)
+- global async reset configuration
+- automatic reset implementation
+- implicit clock and reset passing by default unless specified
+- generate constraints file from top module for certain fpgas
+- generate hopfully readable verilog
+- formal method primitives
+- prevent verilog antipatterns/mistakes
+- easy module generation and driving inputs and receiving outputs
+
+
+Things it cannot do:
+- inout
+- analog circuits
+
+
+Example
+
+```ruby
+component "And" do
+  input "a"
+  input "b"
+  output "y"
+
+  comb do
+    y <= a & b
+  end
+end
+
+```
+
 
 ## Installation
 
